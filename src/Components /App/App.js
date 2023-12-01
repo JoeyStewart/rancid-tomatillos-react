@@ -1,4 +1,5 @@
-import movieData from '.src/Movies-sample.js'
+import  { useState } from 'react'
+import movieDatasr from '../../Movies-sample.js'
 import Movies from '../Movies/Movies.js'
 
   
