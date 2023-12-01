@@ -1,5 +1,5 @@
 import  { useState } from 'react'
-import movieDatasr from '../../Movies-sample.js'
+import movieData from '../../Movies-sample.js'
 import Movies from '../Movies/Movies.js'
 
   
