@@ -1,11 +1,11 @@
 import './Card.css'
 
-export default function Card({ title, image, id }){
+export default function Card({ title, image, id, showDetails }){
     console.log(image)
     return (
-      <div className='card'>
-        <img className='poster' src={image}></img>
+      <button className='card'onClick={() => {showDetails(id)}}>
+        <img className='poster' src={image} alt={title}></img>
         <h3 className='title'>{title}</h3>
-    </div>
+      </button>
     )
   } 
