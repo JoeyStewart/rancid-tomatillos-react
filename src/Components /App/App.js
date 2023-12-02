@@ -20,12 +20,13 @@ import Movies from '../Movies/Movies.js'
     
       return (
         <main className='App'>
-            <h1 style={{ cursor: 'pointer' }} className='rancid' onClick={backToMain}>Rancid-Tomatillos</h1>
-          <p>Movie Time!</p>
+          <header>
+            <h1 className='rancid' style={{ cursor: 'pointer' }} onClick={backToMain}>Rancid Tomatillos</h1>
+          </header>
           {chosenMovie ? (
             <main className='details'>
               <h2 title={chosenMovie.title}>Title: {chosenMovie.title}</h2>
-              <h2 title={chosenMovie.average_rating}>Rating: {chosenMovie.average_rating}</h2>
+              <h2 title={chosenMovie.average_rating}>Rating: {chosenMovie.average_rating.toFixed(1)}</h2>
               <h2 title={chosenMovie.release_date}>Release: {chosenMovie.release_date}</h2>
               <img src={chosenMovie.backdrop_path}></img>
             </main>
