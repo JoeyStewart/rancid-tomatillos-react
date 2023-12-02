@@ -1,6 +1,7 @@
 import  { useState } from 'react'
 import movieData from '../../Movies-sample.js'
 import Movies from '../Movies/Movies.js'
+import './App.css'
 
   
 
@@ -24,14 +25,23 @@ import Movies from '../Movies/Movies.js'
           <header>
             <h1 className='rancid' style={{ cursor: 'pointer' }} onClick={backToMain}>Rancid Tomatillos</h1>
           </header>
+          {/* <input className='searchbar'></input> */}
           {chosenMovie ? (
-            <main className='details'>
-              <h2 title={chosenMovie.title}>Title: {chosenMovie.title}</h2>
-              <h2 title={chosenMovie.average_rating}>Rating: {chosenMovie.average_rating.toFixed(1)}</h2>
-              <h2 title={chosenMovie.release_date}>Release: {chosenMovie.release_date}</h2>
-              <img src={chosenMovie.backdrop_path}></img>
-            </main>
-            
+        <main className='selectedView'>
+          <div className="backdrop">
+            <img className='selectedBackdrop' src={chosenMovie.backdrop_path} alt={chosenMovie.title}></img>
+          <div className="overlay-content">
+            <div className='display-poster'>
+              <img className='movie-poster'src={chosenMovie.poster_path} alt={chosenMovie.poster_path}></img>
+            </div>
+            <div className="info-blurb">
+              <h2 className='selectedTitle' title={chosenMovie.title}>Title: {chosenMovie.title}</h2>
+              <h2 className='selectedRating' title={chosenMovie.average_rating}>Rating: {chosenMovie.average_rating.toFixed(1)}</h2>
+              <h2 className='selectedRelease' title={chosenMovie.release_date}>Release: {chosenMovie.release_date}</h2>
+            </div>
+          </div>
+          </div>
+        </main>
           ) : (
             <Movies movies={movies} showDetails={showDetails} />
           )}
