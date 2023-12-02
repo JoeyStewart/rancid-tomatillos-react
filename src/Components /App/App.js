@@ -26,7 +26,7 @@ function App(){
       {chosenMovie ? (
         <main className='selectedView'>
           <h2 className='selectedTitle' title={chosenMovie.title}>Title: {chosenMovie.title}</h2>
-          <h2 className='selectedRating' title={chosenMovie.average_rating}>Rating: {chosenMovie.average_rating}</h2>
+          <h2 className='selectedRating' title={chosenMovie.average_rating}>Rating: {chosenMovie.average_rating.toFixed(1)}</h2>
           <h2 className='selectedRelease' title={chosenMovie.release_date}>Release: {chosenMovie.release_date}</h2>
           <img className='selectedBackdrop' src={chosenMovie.backdrop_path}></img>
         </main>
