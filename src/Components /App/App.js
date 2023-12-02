@@ -5,19 +5,13 @@ import Movies from '../Movies/Movies.js'
   
 function App(){
   const [movies, setMovies] = useState(movieData.movies)
+  const [chosenMovie, setChosenMovie] = useState(null);
 
-  function chooseMovie(movies, id){
-    console.log(id)
-    let chosenMovie = movies.find( movie => movie.id === id)
+  function showDetails(movieId){
+    console.log(movieId)
+    const chosenMovie = movies.find(movie => movie.id === movieId)
     console.log(chosenMovie)
-    setMovies(chosenMovie) 
-    return(
-      <main className='App'>
-      <h1>Rancid-Tomatillos</h1>
-      <p>Movie Time!</p>
-      <Movies className='movieView' movies = {chosenMovie}/>
-    </main>
-    )
+    setChosenMovie(showMovie);
   }
 
 
