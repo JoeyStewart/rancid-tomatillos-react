@@ -1,13 +1,34 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'LineBeam';
+  font-size: xx-large;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to bottom right, rgb(4, 4, 4), #4169e1); 
+  background-position: center;
+  color:rgb(231, 239, 237);
+  width: 100%; 
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@font-face {
+  font-family: 'LineBeam';
+  src: url('/Users/josephstewart/Mod3/projects/rancid-tomatillos-react/src/Fonts/Film Noir Adventure.ttf');
+  /* src: url('/Users/josephstewart/Mod3/projects/rancid-tomatillos-react/src/Fonts/Linebeam.ttf'); */
+  /* src: url('/Users/josephstewart/Mod3/projects/rancid-tomatillos-react/src/Fonts/SaintCarell_PERSONAL_USE_ONLY.otf'); */
+  /* src: url('/Users/josephstewart/Mod3/projects/rancid-tomatillos-react/src/Fonts/Evil Empire.otf'); */
+  font-weight: normal;
+  font-style: normal;
+}
+
