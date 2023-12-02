@@ -7,8 +7,8 @@ body {
   background: linear-gradient(to bottom right, rgb(4, 4, 4), #4169e1); 
   background-position: center;
   color:rgb(231, 239, 237);
-  width: 100%; 
-  height: 100%;
+  width: 100vw; 
+  height: 100vh;
 }
 
 code {
@@ -25,10 +25,9 @@ header {
 @font-face {
   font-family: 'LineBeam';
   src: url('/Users/josephstewart/Mod3/projects/rancid-tomatillos-react/src/Fonts/Film Noir Adventure.ttf');
-  /* src: url('/Users/josephstewart/Mod3/projects/rancid-tomatillos-react/src/Fonts/Linebeam.ttf'); */
+  /* src: url('../Fonts/Film Noir Adventure.ttf'); */
   /* src: url('/Users/josephstewart/Mod3/projects/rancid-tomatillos-react/src/Fonts/SaintCarell_PERSONAL_USE_ONLY.otf'); */
   /* src: url('/Users/josephstewart/Mod3/projects/rancid-tomatillos-react/src/Fonts/Evil Empire.otf'); */
   font-weight: normal;
   font-style: normal;
 }
-
