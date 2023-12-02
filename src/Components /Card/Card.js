@@ -21,3 +21,4 @@ export default function Card({ title, image, id, showDetails, rating }) {
       </div>
     </main>
   );
+}
