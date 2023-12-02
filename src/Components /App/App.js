@@ -14,15 +14,23 @@ function App(){
     setChosenMovie(showMovie);
   }
 
-
-      
   return(
     <main className='App'>
       <h1>Rancid-Tomatillos</h1>
       <p>Movie Time!</p>
-      <Movies movies = {movies}/>
+      {chosenMovie ? (
+        <main>
+          <h2 title={chosenMovie.title}>Title: {chosenMovie.title}</h2>
+          <h2 title={chosenMovie.average_rating}>Rating: {chosenMovie.average_rating}</h2>
+          <h2 title={chosenMovie.release_date}>Release: {chosenMovie.release_date}</h2>
+           <img src={chosenMovie.backdrop_path}></img>
+        </main>
+           
+      ) : (
+            <Movies movies={movies} showDetails={showDetails} />
+          )}
     </main>
-  )
+  );
 }
 
 export default App;
