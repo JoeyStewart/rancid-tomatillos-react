@@ -3,7 +3,8 @@ import movieData from '../../Movies-sample.js'
 import Movies from '../Movies/Movies.js'
 
   
-  function App(){
+
+ function App(){
      
       const [movies, setMovies] = useState(movieData.movies)
       const [chosenMovie, setChosenMovie] = useState(null);
