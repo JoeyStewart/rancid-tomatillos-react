@@ -19,7 +19,7 @@ import './App.css'
           setMovies(movieData.movies); 
           setChosenMovie(null); 
       }
-    
+    //need to add a movie description to the chosenMovie view along with the other h2 elements once the fetch call is hooked up
       return (
         <main className='App'>
           <header>
