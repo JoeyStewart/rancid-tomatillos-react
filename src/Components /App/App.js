@@ -57,6 +57,9 @@ import './App.css'
         <main className='App'>
           <header>
             <h1 className='rancid' style={{ cursor: 'pointer' }} onClick={backToMain}>Rancid Tomatillos</h1>
+            <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+            <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet"></link>
           </header>
           {/* <input className='searchbar'></input> */}
           {chosenMovie ? (
