@@ -29,4 +29,6 @@ Movies.propTypes = {
    })
   ).isRequired,
   showDetails: PropTypes.func.isRequired,
- };
+
+};
+

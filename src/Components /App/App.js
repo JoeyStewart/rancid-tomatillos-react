@@ -47,11 +47,12 @@ import './App.css'
       })
     }
 
+
     function backToMain() {
       // setMovies([]); 
       setChosenMovie(null); 
   }
-    
+  
       return (
         <main className='App'>
           <header>
