@@ -10,15 +10,17 @@ import './App.css'
   const [chosenMovie, setChosenMovie] = useState(null);
   const [error, setError] = useState('')
   // console.log()
-  function showDetails(movieId) {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}`)
+  function showDetails(movieID) {
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieID}`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`Error code: ${response.status}`);
         }
           return response.json();
         })
-      .then(data => setChosenMovie(data.movie))
+        .then(data => setChosenMovie(data.movie))
+        document.body.style.overflow = 'hidden';
+        document.documentElement.scrollTop = 0;
   }
   console.log(chosenMovie)
     // const chosenMovie = movies.find((movie) => movie.id === movieId);
@@ -51,6 +53,7 @@ import './App.css'
     function backToMain() {
       // setMovies([]); 
       setChosenMovie(null); 
+      document.body.style.overflow = 'visible';
   }
   
       return (
@@ -69,13 +72,13 @@ import './App.css'
           <div className="overlay-content">
             <div className='display-poster'>
               <img className='movie-poster'src={chosenMovie.poster_path} alt={chosenMovie.poster_path}></img>
+              <h4 className='selectedRelease' title={chosenMovie.release_date}>({chosenMovie.release_date.slice(0,4)})</h4>
               <h4 className='tagline'>{chosenMovie.tagline}</h4>
             </div>
             <div className="info-blurb">
               <h2 className='selectedTitle' title={chosenMovie.title}>{chosenMovie.title}</h2>
               <h3 className='selectedOverview' title={chosenMovie.overview}>{chosenMovie.overview}</h3>
-              <h3 className='selectedRating' title={chosenMovie.average_rating}>Rating: {chosenMovie.average_rating.toFixed(1)}</h3>
-              <h4 className='selectedRelease' title={chosenMovie.release_date}>Release: {chosenMovie.release_date.slice(0,4)}</h4>
+              <h3 className='selectedRating' title={chosenMovie.average_rating}>{chosenMovie.average_rating.toFixed(1)}/10 Stars</h3>
               {/* <h5 className='selectedGenres'>{chosenMovie.genres}</h5> */}
             </div>
           </div>
