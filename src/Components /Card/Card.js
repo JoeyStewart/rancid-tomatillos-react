@@ -29,6 +29,6 @@ Card.propTypes = {
   image: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   showDetails: PropTypes.func.isRequired,
-  rating: PropTypes.number.isRequired,
+  rating: PropTypes.string.isRequired,
  };
  
