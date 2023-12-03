@@ -1,5 +1,6 @@
 import Card from "../Card/Card.js"
 import './Movies.css'
+import PropTypes from 'prop-types'
 
 export default function Movies({ movies, showDetails }) {
   return (
@@ -18,3 +19,14 @@ export default function Movies({ movies, showDetails }) {
   );
 }
 
+Movies.propTypes = {
+  movies: PropTypes.arrayOf(
+   PropTypes.shape({
+     title: PropTypes.string,
+     poster_path: PropTypes.string,
+     average_rating: PropTypes.number,
+     id: PropTypes.number,
+   })
+  ).isRequired,
+  showDetails: PropTypes.func.isRequired,
+ };
