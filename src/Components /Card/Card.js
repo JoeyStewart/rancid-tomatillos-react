@@ -1,5 +1,6 @@
 import './Card.css'
 import { useInView } from 'react-intersection-observer';
+import PropTypes from 'prop-types'
 
 export default function Card({ title, image, id, showDetails, rating }) {
   const [ref, inView] = useInView({
@@ -22,3 +23,12 @@ export default function Card({ title, image, id, showDetails, rating }) {
     </main>
   );
 }
+
+Card.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  showDetails: PropTypes.func.isRequired,
+  rating: PropTypes.number.isRequired,
+ };
+ 
