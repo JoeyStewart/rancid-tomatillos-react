@@ -1,4 +1,4 @@
-import  { useState } from 'react'
+import  { useState, useEffect } from 'react'
 import movieData from '../../Movies-sample.js'
 import Movies from '../Movies/Movies.js'
 import './App.css'
@@ -6,19 +6,51 @@ import './App.css'
   
 
  function App(){
-     
-      const [movies, setMovies] = useState(movieData.movies)
-      const [chosenMovie, setChosenMovie] = useState(null);
-      console.log()
-      function showDetails(movieId) {
-        const showMovie = movies.find((movie) => movie.id === movieId);
-        setChosenMovie(showMovie);
-      }
+  const [movies, setMovies] = useState([])
+  const [chosenMovie, setChosenMovie] = useState(null);
+  const [error, setError] = useState('')
+  // console.log()
+  function showDetails(movieId) {
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Error code: ${response.status}`);
+        }
+          return response.json();
+        })
+      .then(data => setChosenMovie(data.movie))
+  }
+  console.log(chosenMovie)
+    // const chosenMovie = movies.find((movie) => movie.id === movieId);
+    // setChosenMovie(chosenMovie);
 
-        function backToMain() {
-          setMovies(movieData.movies); 
-          setChosenMovie(null); 
-      }
+    useEffect(() => {
+      getMovies()
+    }, [])
+
+    const getMovies= () => {
+      fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+      .then(response => {
+        if(!response.ok) {
+          console.log("<----error", error)
+          throw new Error (`${error}: Failed attempt to get information, try again.`)
+        }
+        return response.json()
+      })
+      .then(moviesData => {
+        console.log("<---movie data", moviesData)
+        setMovies(moviesData.movies)
+      })
+      .catch(error => {
+        console.log('<---catch error', error)
+        setError(error.message)
+      })
+    }
+
+    function backToMain() {
+      // setMovies([]); 
+      setChosenMovie(null); 
+  }
     
       return (
         <main className='App'>
@@ -27,7 +59,7 @@ import './App.css'
           </header>
           {/* <input className='searchbar'></input> */}
           {chosenMovie ? (
-        <main className='selectedView'>
+        <section className='selectedView'>
           <div className="backdrop">
             <img className='selectedBackdrop' src={chosenMovie.backdrop_path} alt={chosenMovie.title}></img>
           <div className="overlay-content">
@@ -41,7 +73,7 @@ import './App.css'
             </div>
           </div>
           </div>
-        </main>
+        </section>
           ) : (
             <Movies movies={movies} showDetails={showDetails} />
           )}
