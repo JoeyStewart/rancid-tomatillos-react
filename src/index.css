@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'LineBeam';
+  font-family: 'Limelight', sans-serif;
   font-size: xx-large;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -22,12 +22,3 @@ header {
   justify-content: center;
 }
 
-@font-face {
-  font-family: 'LineBeam';
-  src: url('/Users/deannastevens/Desktop/mod_3/rancid-tomatillos-react/src/Fonts/Film Noir Adventure.ttf');
-  /* src: url('/Users/josephstewart/Mod3/projects/rancid-tomatillos-react/src/Fonts/Linebeam.ttf'); */
-  /* src: url('/Users/josephstewart/Mod3/projects/rancid-tomatillos-react/src/Fonts/SaintCarell_PERSONAL_USE_ONLY.otf'); */
-  /* src: url('/Users/josephstewart/Mod3/projects/rancid-tomatillos-react/src/Fonts/Evil Empire.otf'); */
-  font-weight: normal;
-  font-style: normal;
-}
