@@ -65,11 +65,14 @@ import './App.css'
           <div className="overlay-content">
             <div className='display-poster'>
               <img className='movie-poster'src={chosenMovie.poster_path} alt={chosenMovie.poster_path}></img>
+              <h4 className='tagline'>{chosenMovie.tagline}</h4>
             </div>
             <div className="info-blurb">
-              <h2 className='selectedTitle' title={chosenMovie.title}>Title: {chosenMovie.title}</h2>
-              <h2 className='selectedRating' title={chosenMovie.average_rating}>Rating: {chosenMovie.average_rating.toFixed(1)}</h2>
-              <h2 className='selectedRelease' title={chosenMovie.release_date}>Release: {chosenMovie.release_date}</h2>
+              <h2 className='selectedTitle' title={chosenMovie.title}>{chosenMovie.title}</h2>
+              <h3 className='selectedOverview' title={chosenMovie.overview}>{chosenMovie.overview}</h3>
+              <h3 className='selectedRating' title={chosenMovie.average_rating}>Rating: {chosenMovie.average_rating.toFixed(1)}</h3>
+              <h4 className='selectedRelease' title={chosenMovie.release_date}>Release: {chosenMovie.release_date.slice(0,4)}</h4>
+              {/* <h5 className='selectedGenres'>{chosenMovie.genres}</h5> */}
             </div>
           </div>
           </div>
