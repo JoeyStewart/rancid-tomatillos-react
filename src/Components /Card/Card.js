@@ -18,7 +18,7 @@ export default function Card({ title, image, id, showDetails, rating }) {
       <img className='poster' src={image} alt={title} />
       <div className='movie-info'>
         <h3 className='title'>{title}</h3>
-        <h3 className='rating'>Rating: {rating}</h3>
+        <h3 className='rating'>{rating}/10 Stars</h3>
       </div>
     </main>
   );
