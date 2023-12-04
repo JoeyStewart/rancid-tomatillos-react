@@ -1,48 +1,25 @@
-
-.App {
-  text-align: center;
-}
-
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+body {
+  margin: 0;
+  font-family: 'Limelight', sans-serif;
+  font-size: xx-large;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to bottom right, rgb(4, 4, 4), #4169e1); 
+  background-position: center;
+  color:rgb(231, 239, 237);
+  width: 100%; 
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
 }
 
 .rancid{
@@ -63,7 +40,6 @@ header {
   align-items: center;
   justify-content: center;
 }
-
 
 .selectedRating {
   display: flex;
@@ -114,12 +90,3 @@ header {
   align-items: center;
   box-sizing: border-box;
 }
-
-/* .selectedTitle,
-.selectedRating,
-.selectedRelease {
-  margin: 5px 0;
-} */
-
-
-
