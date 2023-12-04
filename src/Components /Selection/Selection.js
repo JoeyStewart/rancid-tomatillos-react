@@ -11,12 +11,12 @@ export default function Selection({chosenMovie}) {
       <div className='display-poster'>
         <img className='movie-poster'src={chosenMovie.poster_path} alt={chosenMovie.poster_path}></img>
         <h4 className='selectedRelease' title={chosenMovie.release_date}>({chosenMovie.release_date.slice(0,4)})</h4>
-        <h4 className='tagline'>{chosenMovie.tagline}</h4>
+        <h3 className='selectedRating' title={chosenMovie.average_rating}>{chosenMovie.average_rating.toFixed(1)}/10 Stars</h3>
       </div>
       <div className="info-blurb">
         <h2 className='selectedTitle' title={chosenMovie.title}>{chosenMovie.title}</h2>
+        <h4 className='tagline'>{chosenMovie.tagline}</h4>
         <h3 className='selectedOverview' title={chosenMovie.overview}>{chosenMovie.overview}</h3>
-        <h3 className='selectedRating' title={chosenMovie.average_rating}>{chosenMovie.average_rating.toFixed(1)}/10 Stars</h3>
         {/* <h5 className='selectedGenres'>{chosenMovie.genres}</h5> */}
       </div>
     </div>
