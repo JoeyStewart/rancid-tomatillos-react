@@ -7,7 +7,7 @@ import Selection from '../Selection/Selection.js'
   const [movies, setMovies] = useState([])
   const [chosenMovie, setChosenMovie] = useState(null);
   const [error, setError] = useState('')
-  // console.log()
+
   function showDetails(movieID) {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieID}`)
       .then(response => {
@@ -46,10 +46,10 @@ import Selection from '../Selection/Selection.js'
   }
 
   function backToMain() {
-    // setMovies([]); 
     setChosenMovie(null); 
     document.body.style.overflow = 'visible';
   }
+
   return (
     <main className='App'>
       <header>
@@ -66,7 +66,6 @@ import Selection from '../Selection/Selection.js'
       )}
     </main>
   );
-    
   }
 
 export default App;
