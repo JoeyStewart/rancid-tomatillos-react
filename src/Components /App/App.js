@@ -1,9 +1,7 @@
 import  { useState, useEffect } from 'react'
-import movieData from '../../Movies-sample.js'
 import Movies from '../Movies/Movies.js'
 import './App.css'
-
-  
+import Selection from '../Selection/Selection.js'
 
  function App(){
   const [movies, setMovies] = useState([])
@@ -23,72 +21,51 @@ import './App.css'
         document.documentElement.scrollTop = 0;
   }
   console.log(chosenMovie)
-    // const chosenMovie = movies.find((movie) => movie.id === movieId);
-    // setChosenMovie(chosenMovie);
+    
+  useEffect(() => {
+    getMovies()
+  }, [])
 
-    useEffect(() => {
-      getMovies()
-    }, [])
-
-    const getMovies= () => {
-      fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => {
-        if(!response.ok) {
-          console.log("<----error", error)
-          throw new Error (`${error}: Failed attempt to get information, try again.`)
-        }
-        return response.json()
-      })
-      .then(moviesData => {
-        console.log("<---movie data", moviesData)
-        setMovies(moviesData.movies)
-      })
-      .catch(error => {
-        console.log('<---catch error', error)
-        setError(error.message)
-      })
-    }
-
-
-    function backToMain() {
-      // setMovies([]); 
-      setChosenMovie(null); 
-      document.body.style.overflow = 'visible';
+  const getMovies= () => {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    .then(response => {
+      if(!response.ok) {
+        console.log("<----error", error)
+        throw new Error (`${error}: Failed attempt to get information, try again.`)
+      }
+      return response.json()
+    })
+    .then(moviesData => {
+      console.log("<---movie data", moviesData)
+      setMovies(moviesData.movies)
+    })
+    .catch(error => {
+      console.log('<---catch error', error)
+      setError(error.message)
+    })
   }
-  
-      return (
-        <main className='App'>
-          <header>
-            <h1 className='rancid' style={{ cursor: 'pointer' }} onClick={backToMain}>Rancid Tomatillos</h1>
-            <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
-            <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet"></link>
-          </header>
-          {/* <input className='searchbar'></input> */}
-          {chosenMovie ? (
-        <section className='selectedView'>
-          <div className="backdrop">
-            <img className='selectedBackdrop' src={chosenMovie.backdrop_path} alt={chosenMovie.title}></img>
-          <div className="overlay-content">
-            <div className='display-poster'>
-              <img className='movie-poster'src={chosenMovie.poster_path} alt={chosenMovie.poster_path}></img>
-              <h4 className='selectedRelease' title={chosenMovie.release_date}>({chosenMovie.release_date.slice(0,4)})</h4>
-              <h4 className='tagline'>{chosenMovie.tagline}</h4>
-            </div>
-            <div className="info-blurb">
-              <h2 className='selectedTitle' title={chosenMovie.title}>{chosenMovie.title}</h2>
-              <h3 className='selectedOverview' title={chosenMovie.overview}>{chosenMovie.overview}</h3>
-              <h3 className='selectedRating' title={chosenMovie.average_rating}>{chosenMovie.average_rating.toFixed(1)}/10 Stars</h3>
-              {/* <h5 className='selectedGenres'>{chosenMovie.genres}</h5> */}
-            </div>
-          </div>
-          </div>
-        </section>
-          ) : (
-            <Movies movies={movies} showDetails={showDetails} />
-          )}
-        </main>
-      );
+
+  function backToMain() {
+    // setMovies([]); 
+    setChosenMovie(null); 
+    document.body.style.overflow = 'visible';
+  }
+  return (
+    <main className='App'>
+      <header>
+        <h1 className='rancid' style={{ cursor: 'pointer' }} onClick={backToMain}>Rancid Tomatillos</h1>
+        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+        <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet"></link>
+      </header>
+      {/* <input className='searchbar'></input> */}
+      {chosenMovie ? (
+        <Selection chosenMovie={chosenMovie}/>
+      ) : (
+        <Movies movies={movies} showDetails={showDetails} />
+      )}
+    </main>
+  );
     
   }
 
