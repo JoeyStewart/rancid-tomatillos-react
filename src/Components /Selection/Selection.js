@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Selection.css'
 
 export default function Selection({chosenMovie}) {
   return (
