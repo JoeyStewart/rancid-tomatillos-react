@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function Selection() {
+export default function Selection({chosenMovie}) {
   return (
     <section className='selectedView'>
           <div className="backdrop">
@@ -23,3 +23,13 @@ export default function Selection() {
         </section>
   )
 }
+
+Selection.propTypes = {
+  title: PropTypes.string.isRequired,
+  backdrop_path: PropTypes.string.isRequired,
+  poster_path: PropTypes.string.isRequired,
+  release_date: PropTypes.string.isRequired,
+  tagline: PropTypes.string.isRequired,
+  overview: PropTypes.string.isRequired,
+  average_rating: PropTypes.number.isRequired
+};
