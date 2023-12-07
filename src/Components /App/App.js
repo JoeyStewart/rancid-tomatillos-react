@@ -20,12 +20,13 @@ import Selection from '../Selection/Selection.js';
         }
         return response.json();
       })
-      .then(data => setChosenMovie(data.movie))
-      navigate('/Movie');
+      .then(data => {
+        setChosenMovie(data.movie);
+        navigate(`/${data.movie.id}`);
+      })
       document.body.style.overflow = 'hidden';
       document.documentElement.scrollTop = 0;
     }
-  console.log(chosenMovie)
     
   
   const getMovies= () => {
@@ -67,8 +68,9 @@ import Selection from '../Selection/Selection.js';
           <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet"></link>
       </header>
       <Routes>
-        <Route path='/' exact  element={moviesLoaded ? (<Movies movies={movies} showDetails={showDetails} />) : (<p>Loading movies...</p>)}/>
-        <Route  path={chosenMovie && chosenMovie.title ? `/${chosenMovie.title}` : '/'} element={chosenMovie && (<Selection chosenMovie={chosenMovie}/>)}/>
+        <Route path='/' element={moviesLoaded ? <Movies movies={movies} showDetails={showDetails} /> : <p>Loading movies...</p>} />
+        {chosenMovie && (
+        <Route path={`/${chosenMovie.id}`} element={<Selection chosenMovie={chosenMovie} />} />)}
       </Routes>
       {/* <input className='searchbar'></input> */}
     </main>
