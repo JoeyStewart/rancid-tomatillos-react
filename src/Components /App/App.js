@@ -18,13 +18,13 @@ import Selection from '../Selection/Selection.js';
         if (!response.ok) {
           throw new Error(`Error code: ${response.status}`);
         }
-          return response.json();
-        })
-        .then(data => setChosenMovie(data.movie))
-        navigate('/Movie');
-        document.body.style.overflow = 'hidden';
-        document.documentElement.scrollTop = 0;
-  }
+        return response.json();
+      })
+      .then(data => setChosenMovie(data.movie))
+      navigate('/Movie');
+      document.body.style.overflow = 'hidden';
+      document.documentElement.scrollTop = 0;
+    }
   console.log(chosenMovie)
     
   
@@ -68,7 +68,7 @@ import Selection from '../Selection/Selection.js';
       </header>
       <Routes>
         <Route path='/' exact  element={moviesLoaded ? (<Movies movies={movies} showDetails={showDetails} />) : (<p>Loading movies...</p>)}/>
-        <Route path='/Movie' element={chosenMovie && (<Selection chosenMovie={chosenMovie}/>)}/>
+        <Route  path={chosenMovie && chosenMovie.title ? `/${chosenMovie.title}` : '/'} element={chosenMovie && (<Selection chosenMovie={chosenMovie}/>)}/>
       </Routes>
       {/* <input className='searchbar'></input> */}
     </main>
