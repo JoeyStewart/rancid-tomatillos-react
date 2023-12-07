@@ -54,7 +54,7 @@ import Selection from '../Selection/Selection.js';
   
   function backToMain() {
     setChosenMovie(null); 
-    navigate('/git')
+    navigate('/')
     document.body.style.overflow = 'visible';
   }
 
