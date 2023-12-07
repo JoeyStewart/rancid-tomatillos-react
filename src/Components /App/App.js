@@ -66,6 +66,7 @@ import Selection from '../Selection/Selection.js'
       )}
     </main>
   );
-  }
+}
 
 export default App;
+
