@@ -5,6 +5,7 @@ import './Selection.css'
 export default function Selection({chosenMovie}) {
   return (
   <section className='selectedView'>
+     {/* <Link to={`/details/${chosenMovie.id}`} className='back-link'>Back</Link> */}
     <div className="backdrop">
       <img className='selectedBackdrop' src={chosenMovie.backdrop_path} alt={chosenMovie.title}></img>
     <div className="overlay-content">

@@ -12,6 +12,10 @@
    .fade-in {
       opacity: 1;
    }
+
+   .card:hover {
+    transform: scale(1.2);
+   }
    
    
    .poster {
