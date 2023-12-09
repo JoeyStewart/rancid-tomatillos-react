@@ -42,8 +42,9 @@ code {
   display: flex;
   flex-direction: column;
   height: 70%; 
-  max-width:20%;
-  margin: 10%
+  max-width:30%;
+  margin: 10%;
+  margin-top: -100px
  }
  
  
@@ -95,6 +96,7 @@ code {
   font-size: medium;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-indent: 20px;
+  font-size: 1em
  }
  
  
