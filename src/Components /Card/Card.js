@@ -9,20 +9,22 @@ export default function Card({ title, image, id, showDetails, rating }) {
   });
 
   return (
-    <main
-      ref={ref}
-      style={{ cursor: 'pointer' }}
-      className={`card ${inView ? 'fade-in' : ''}`}
-      onClick={() => showDetails(id)}
-    >
-      <img className='poster' src={image} alt={title} />
-      <div className='movie-info'>
-        <h3 className='title'>{title}</h3>
-        <h3 className='rating'>{rating}/10 Stars</h3>
-      </div>
+    <main to={`/${id}`} className='card-link'>
+      <section
+        ref={ref}
+        style={{ cursor: 'pointer' }}
+        className={`card ${inView ? 'fade-in' : ''}`}
+        onClick={() => showDetails(id)}
+      >
+        <img className='poster' src={image} alt={title} />
+        <div className='movie-info'>
+          <h3 className='title'>{title}</h3>
+          <h3 className='rating'>{rating}/10 Stars</h3>
+        </div>
+      </section>
     </main>
   );
-}
+};
 
 Card.propTypes = {
   title: PropTypes.string.isRequired,
