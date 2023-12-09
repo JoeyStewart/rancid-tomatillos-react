@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import './Selection.css'
 import { useParams } from 'react-router-dom'
 // import { useEffect } from 'react'
 
 export default function Selection() {
+  //do i need to pass id as a prop?
  const { id } = useParams()
-
  const [chosenMovie, setChosenMovie] = useState(null);
 
-useEffect(() => {
- fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-   .then(response => {
-     if (!response.ok) {
-       throw new Error(`Error code: ${response.status}`);
-     }
-     return response.json();
-   })
-   .then(data => {
-    console.log("test! in the second then in useEffect for Selection")
-     setChosenMovie(data.movie);
-   });
-}, [id]);
+  useEffect(() => {
+  fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Error code: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log("test! in the second then in useEffect for Selection")
+      setChosenMovie(data.movie);
+    });
+  }, [id]);
 
   return (
   <section className='selectedView'>
@@ -46,17 +46,17 @@ useEffect(() => {
   )
 }
 
-Selection.propTypes = {
-  chosenMovie: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    backdrop_path: PropTypes.string.isRequired,
-    poster_path: PropTypes.string.isRequired,
-    release_date: PropTypes.string.isRequired,
-    tagline: PropTypes.string.isRequired,
-    overview: PropTypes.string.isRequired,
-    average_rating: PropTypes.number.isRequired
-  }).isRequired
- };
+// Selection.propTypes = {
+//   chosenMovie: PropTypes.shape({
+//     title: PropTypes.string.isRequired,
+//     backdrop_path: PropTypes.string.isRequired,
+//     poster_path: PropTypes.string.isRequired,
+//     release_date: PropTypes.string.isRequired,
+//     tagline: PropTypes.string.isRequired,
+//     overview: PropTypes.string.isRequired,
+//     average_rating: PropTypes.number.isRequired
+//   }).isRequired
+//  };
 
 
 
