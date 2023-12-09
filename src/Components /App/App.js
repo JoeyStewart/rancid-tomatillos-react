@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Movies from '../Movies/Movies.js';
 import './App.css';
 import Selection from '../Selection/Selection.js';
@@ -10,7 +10,7 @@ import Selection from '../Selection/Selection.js';
   const [error, setError] = useState('')
   const [moviesLoaded, setMoviesLoaded] = useState(false)
   const navigate = useNavigate();
-  console.log(movies)
+  console.log(chosenMovie)
   
   function showDetails(movieID) {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieID}`)
@@ -24,7 +24,7 @@ import Selection from '../Selection/Selection.js';
         setChosenMovie(data.movie);
         navigate(`/${data.movie.id}`);
       })
-      document.body.style.overflow = 'hidden';
+      // document.body.style.overflow = 'hidden';
       document.documentElement.scrollTop = 0;
     }
     
@@ -54,10 +54,11 @@ import Selection from '../Selection/Selection.js';
   }, [])
   
   function backToMain() {
-    setChosenMovie(null); 
+    // setChosenMovie(null); 
     navigate('/')
     document.body.style.overflow = 'visible';
-  }
+    }
+
 
   return (
     <main className='App'>
@@ -71,11 +72,12 @@ import Selection from '../Selection/Selection.js';
         <Route path='/' element={moviesLoaded ? <Movies movies={movies} showDetails={showDetails} /> : <p>Loading movies...</p>} />
         {chosenMovie && (
         <Route path={`/${chosenMovie.id}`} element={<Selection chosenMovie={chosenMovie} />} />)}
+        <Route path='*' element={<p>Error</p>} className="error"/>
       </Routes>
       {/* <input className='searchbar'></input> */}
     </main>
   );
 }
 
-export default App;
 
+export default App;
