@@ -56,7 +56,7 @@ import Selection from '../Selection/Selection.js';
   function backToMain() {
     // setChosenMovie(null); 
     navigate('/')
-    // document.body.style.overflow = 'visible';
+    document.body.style.overflow = 'visible';
     }
 
 
