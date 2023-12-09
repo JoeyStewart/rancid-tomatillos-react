@@ -198,14 +198,65 @@ code {
     text-align: center;
   }
 
-  .res-overlay {
+  .res-overlay-small {
   display: none;
+  }
+
+  .res-overlay-mid {
+    display: none;
   }
 }
 
-@media screen and (max-width: 1449px) {
+@media screen and (max-width: 1449px) and (min-width: 700px) {
+  
+  body {
+    overflow-y: visible; 
+  }
 
-  .res-overlay {
+  .res-overlay-small {
+    display: none;
+    }
+
+  .res-overlay-mid {
+    display: flex;
+    
+  }
+
+  .selectedTitle-mid {
+    text-align: center;
+  }
+
+  .selectedRelease-mid {
+    text-align: center;
+  }
+
+  .selectedRating-mid {
+    text-align: center;
+  }
+
+  .selectedOverview-mid {
+    text-align: center;
+  }
+
+  .tagline-mid {
+    text-align: center;
+  }
+
+  .selectedGenres-mid {
+    text-align: center;
+  }
+  
+  .movie-poster-mid {
+    width:100%;
+    height: 60vh;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+  }
+
+}
+
+@media screen and (max-width: 699px) {
+
+  .res-overlay-small {
     display: flex;
     
   }
@@ -230,15 +281,16 @@ code {
     text-align: center;
   }
 
-  .selectedGenres {
+  .selectedGenres-small {
     text-align: center;
   }
+
   .movie-poster-small {
     width:100%;
     height: 60vh;
-    /* object-fit: cover; */
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
   }
+  
 
   body {
     overflow: visible;
