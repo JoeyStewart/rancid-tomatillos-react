@@ -2,6 +2,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 body {
@@ -24,7 +25,7 @@ code {
  
  .rancid{
   display: flex;
-  justify-content: column;
+  flex-direction: column;
   align-items: center;
  }
  
@@ -35,22 +36,22 @@ code {
   margin: 0;
   padding: 0;
  }
- 
- 
- 
+
  
  .info-blurb {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 250px;
-  margin-top: -100px;
-  max-width:30%;
+  /* justify-content: space-between; */
+  height: 70%; 
+  max-width:20%;
+  margin: 10%
  }
  
  
  .display-poster {
-  max-height: 70%;
+  height: 90%;
+  max-width: 20%;
+  margin: 10%
  }
  
  
@@ -117,11 +118,11 @@ code {
  
  
  .movie-poster{
-  display: block;
-  margin: 0 auto;
-  max-width:30%;
-  max-height: 30%;
-  object-fit: cover;
+  /* display: block;
+  margin: 0 auto; */
+  width:100%;
+  height: 60vh;
+  /* object-fit: cover; */
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
  }
  
@@ -130,13 +131,116 @@ code {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80%;
-  height: 70%;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  margin-left: 50px;
+  /* margin-left: 50px; */
+}
+
+.error{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: xx-large
  }
+
+ .res-overlay {
+  display: none; 
+}
  
+
+ @media screen and (max-width: 1450px) {
+ 
+  body {
+  overflow-y: hidden;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  
+  .backdrop {
+    display: none; 
+  }
+
+  .overlay-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .selectedView {
+    width: 100vw;
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .display-poster {
+    order: 1; 
+    max-width: 40%;
+    max-height: 40%;
+    min-width: 30%;
+    max-height: 30%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-blurb {
+    order: 2;
+    max-width: 40%;
+    max-height: 35%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .res-overlay {
+  display: none;
+  }
+}
+
+@media screen and (max-width: 1449px) {
+
+  .res-overlay {
+    display: flex;
+    
+  }
+
+  .selectedTitle-small {
+    text-align: center;
+  }
+
+  .selectedRelease-small {
+    text-align: center;
+  }
+
+  .selectedRating-small {
+    text-align: center;
+  }
+
+  .selectedOverview-small {
+    text-align: center;
+  }
+
+  .tagline-small {
+    text-align: center;
+  }
+
+  .selectedGenres {
+    text-align: center;
+  }
+  .movie-poster-small {
+    width:100%;
+    height: 60vh;
+    /* object-fit: cover; */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+  }
+
+  body {
+    overflow: visible;
+    }
+}
