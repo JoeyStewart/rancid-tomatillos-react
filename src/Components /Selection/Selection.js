@@ -30,22 +30,28 @@ export default function Selection({chosenMovie}) {
           </div>
           <div className="mid-poster-container">
             <img className='movie-poster-mid'src={chosenMovie.poster_path} alt={chosenMovie.poster_path}></img>
+            <h4 className='selectedRelease-mid' title={chosenMovie.release_date}>({chosenMovie.release_date.slice(0,4)})</h4>
           </div>
-          <h4 className='selectedRelease-mid' title={chosenMovie.release_date}>({chosenMovie.release_date.slice(0,4)})</h4>
-          <h3 className='selectedOverview-mid' title={chosenMovie.overview}>{chosenMovie.overview}</h3>
-          <h3 className='selectedRating-mid' title={chosenMovie.average_rating}>{chosenMovie.average_rating.toFixed(1)}/10 Stars</h3>
-          <h5 className='selectedGenres-mid'>{chosenMovie.genres}</h5>
+          <div className='second-info-mid'>
+            <h3 className='selectedOverview-mid' title={chosenMovie.overview}>{chosenMovie.overview}</h3>
+            <h3 className='selectedRating-mid' title={chosenMovie.average_rating}>{chosenMovie.average_rating.toFixed(1)}/10 Stars</h3>
+            <h5 className='selectedGenres-mid'>{chosenMovie.genres}</h5>
+          </div>
         </div>
       </div>
       <div className='res-overlay-small'>
         <div className='display-poster-small'>
-          <h2 className='selectedTitle-small' title={chosenMovie.title}>{chosenMovie.title}</h2>
-          <h4 className='tagline-small'>{chosenMovie.tagline}</h4>
+          <div className='first-info-small'>
+            <h2 className='selectedTitle-small' title={chosenMovie.title}>{chosenMovie.title}</h2>
+            <h4 className='tagline-small'>{chosenMovie.tagline}</h4>
+          </div>
           <img className='movie-poster-small'src={chosenMovie.poster_path} alt={chosenMovie.poster_path}></img>
           <h4 className='selectedRelease-small' title={chosenMovie.release_date}>({chosenMovie.release_date.slice(0,4)})</h4>
-          <h3 className='selectedOverview-small' title={chosenMovie.overview}>{chosenMovie.overview}</h3>
-          <h3 className='selectedRating-small' title={chosenMovie.average_rating}>{chosenMovie.average_rating.toFixed(1)}/10 Stars</h3>
-          <h5 className='selectedGenres-small'>{chosenMovie.genres}</h5>
+          <div className='second-info-small'>
+            <h3 className='selectedOverview-small' title={chosenMovie.overview}>{chosenMovie.overview}</h3>
+            <h3 className='selectedRating-small' title={chosenMovie.average_rating}>{chosenMovie.average_rating.toFixed(1)}/10 Stars</h3>
+            <h5 className='selectedGenres-small'>{chosenMovie.genres}</h5>
+          </div>
         </div>
       </div>
   </section>
