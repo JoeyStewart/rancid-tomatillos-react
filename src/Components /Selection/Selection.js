@@ -1,8 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import './Selection.css'
+import { useParams } from 'react-router-dom'
+// import { useEffect } from 'react'
 
-export default function Selection({chosenMovie}) {
+export default function Selection() {
+ const { id } = useParams()
+
+ const [chosenMovie, setChosenMovie] = useState(null);
+
+useEffect(() => {
+ fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+   .then(response => {
+     if (!response.ok) {
+       throw new Error(`Error code: ${response.status}`);
+     }
+     return response.json();
+   })
+   .then(data => {
+    console.log("test! in the second then in useEffect for Selection")
+     setChosenMovie(data.movie);
+   });
+}, [id]);
+
   return (
   <section className='selectedView'>
      {/* <Link to={`/details/${chosenMovie.id}`} className='back-link'>Back</Link> */}
