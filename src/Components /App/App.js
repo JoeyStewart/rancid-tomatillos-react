@@ -24,7 +24,7 @@ import Selection from '../Selection/Selection.js';
         setChosenMovie(data.movie);
         navigate(`/${data.movie.id}`);
       })
-      // document.body.style.overflow = 'hidden';
+      // document.body.style.overflow = 'auto';
       document.documentElement.scrollTop = 0;
     }
     
@@ -69,10 +69,17 @@ import Selection from '../Selection/Selection.js';
           <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet"></link>
       </header>
       <Routes>
-        <Route path='/' element={moviesLoaded ? <Movies movies={movies} showDetails={showDetails} /> : <p>Loading movies...</p>} />
+        <Route path='/' 
+            element={
+            moviesLoaded ? (
+            <Movies movies={movies} showDetails={showDetails} />
+            ) : error ? (
+            <h2 className="error-message">The server is down. Please try again later.</h2>
+            ) : (
+            <p>Loading movies...</p>)}/>
         {chosenMovie && (
         <Route path={`/${chosenMovie.id}`} element={<Selection chosenMovie={chosenMovie} />} />)}
-        <Route path='*' element={<p>Error</p>} className="error"/>
+        <Route path='*' element={<p className="error-message" >404 Page Not Found: This Page Doesn't Exist</p>} />
       </Routes>
       {/* <input className='searchbar'></input> */}
     </main>
