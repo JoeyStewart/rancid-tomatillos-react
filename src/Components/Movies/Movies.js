@@ -40,16 +40,4 @@ function Movies() {
   );
 }
 
-Movies.propTypes = {
-  movies: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string,
-      poster_path: PropTypes.string,
-      average_rating: PropTypes.number,
-      id: PropTypes.number,
-    })
-  ).isRequired,
-  showDetails: PropTypes.func.isRequired,
-};
-
 export default Movies;
