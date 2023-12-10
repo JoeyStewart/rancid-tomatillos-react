@@ -30,7 +30,9 @@ The project also provides an extension option for building a robust testing suit
 12. Enjoy!
 
 ## Preview of App:
-
+![](https://github.com/JoeyStewart/rancid-tomatillos-react/blob/main/Rancid.gif)
+![](https://github.com/JoeyStewart/rancid-tomatillos-react/blob/main/RT_small_breakpoint.png)
+![](https://github.com/JoeyStewart/rancid-tomatillos-react/blob/main/RT_medium_breakpoint.png)
 
 
 ## Context:
