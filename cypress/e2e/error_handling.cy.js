@@ -4,7 +4,6 @@ describe("should show movie details", () => {
       statusCode: 200, 
       fixture: "movies.json"
     })
-      // need an alias for intercept, can create variable name, should it be a function?
       cy.visit("http://localhost:3000/potato")
       cy.get(".error-message").contains("Error: Page Does Not Exist, Click Title to Navigate Back to Home Page")
       cy.visit("http://localhost:3000/694919/potato")
