@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import './index.css';
-import App from '../src/Components /App/App.js';
-import { BrowserRouter } from 'react-router-dom';
+import Root from "./Routes/root";
+import Selection, { loader as selectionLoader } from "./Routes/selection";
+import ErrorPage from "./error-page";
+import Movies, { loader as moviesLoader } from "./Components/Movies/Movies";
+import reportWebVitals from "./reportWebVitals";
 
 const router = createHashRouter([
   {
