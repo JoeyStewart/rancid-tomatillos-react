@@ -64,7 +64,7 @@ Being able to use CSS along with the creation of a resposive website was very re
 
 
 ### Dan:
-
+Learning to use and becoming more familiar with React, Cypress and Router were major wins. Seeing how React components and JSX enable us to create more complex functionality and render more interesting viewable web apps more easily was exciting. Cypress' End to End testing was a little more complex to learn, but so much more powerful in allowing us to test almost everything we can build. Some of the wins were small, like learning how much better Cypress works with Electron as its browser for E2E testing. Stepping back and thinking about the number of new tools this project required us to use and even teach ourselves to use is a little overwhelming. State, PropTypes, Responsive layouts, Router, Cypress, React - no project at Turing we did so far required this many new techs or learning while building.
 
 ## Challenges and How We Overcame Them:
 ### Joey:
@@ -74,6 +74,7 @@ Understanding routing is a challenge. It looked so simple on its onset, but I qu
 
 
 ### Dan:
-
+Of course learning while building has required a great deal of refactoring. Our team handled this well. We took this as an opportunity to learn as we redid the project over and over again. It was interesting to see how new tools increased the performance of the app, like adding router so that the user could navigate not just by clicking on links, but also by using the back and forward arrows at the upper left-hand corner of the page. For me personally, one challenge I had was trying to figure out how to handle errors and display them to the user in different situations. When dealing with error handling for incorrect URL's or paths, I was able to use Router to guide the user (via a created route) to the display of an error message. However, when dealing with the possibility of an error indicating a server problem I needed a different way to trigger the display of the error message. With the help of a mentor I realized that since the requested data from the API would not be coming through for us to display on the page (in the event of server problems) we could use conditional logic and useState to cause the error message to display by including this logic in the return statement we were using to render the App component.
+As a team we found that there were parts of the project that benefitted from synchronous work and parts that were more efficiently done asynchronously. We responded to this challenge by finding a good balance of synchronous and asynchronous work while keeping in constant communication via slack
 
 
