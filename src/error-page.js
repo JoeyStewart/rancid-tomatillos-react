@@ -4,7 +4,7 @@ export default function ErrorPage() {
   const error = useRouteError();
 
   return (
-    <div className=".error-message">
+    <div className="error-message">
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
       <p>
