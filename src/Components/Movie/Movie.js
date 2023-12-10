@@ -67,7 +67,7 @@ export default function Movie({ chosenMovie }) {
             >
               {chosenMovie.average_rating.toFixed(1)}/10 Stars
             </h3>
-            <h5 className="selectedGenres-mid">{chosenMovie.genres}</h5>
+            {/* <h5 className="selectedGenres-mid">{chosenMovie.genres.split}</h5> */}
           </div>
         </div>
       </div>
@@ -100,7 +100,7 @@ export default function Movie({ chosenMovie }) {
             >
               {chosenMovie.average_rating.toFixed(1)}/10 Stars
             </h3>
-            <h5 className="selectedGenres-small">{chosenMovie.genres}</h5>
+            {/* <h5 className="selectedGenres-small">{chosenMovie.genres}</h5> */}
           </div>
         </div>
       </div>
