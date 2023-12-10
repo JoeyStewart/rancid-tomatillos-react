@@ -1,4 +1,4 @@
-header {
+/* header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +29,6 @@ code {
   align-items: center;
  }
  
- 
  .selectedView {
   width: 100vw;
   height: 100vh;
@@ -37,7 +36,6 @@ code {
   padding: 0;
  }
 
- 
  .info-blurb {
   display: flex;
   flex-direction: column;
@@ -47,13 +45,11 @@ code {
   margin-top: -100px
  }
  
- 
  .display-poster {
   height: 90%;
   max-width: 20%;
   margin: 10%
  }
- 
  
  .selectedTitle {
   display: flex;
@@ -63,22 +59,17 @@ code {
   text-align: center;
  }
  
- 
- 
- 
  .selectedRating {
   display: flex;
   align-items: center;
   justify-content: center;
  }
  
- 
  .selectedRelease {
   display: flex;
   align-items: center;
   justify-content: center;
  }
- 
  
  .tagline {
   display: flex;
@@ -87,7 +78,6 @@ code {
   font-size: x-large;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
  }
- 
  
  .selectedOverview {
   display: flex;
@@ -99,14 +89,12 @@ code {
   font-size: 1em
  }
  
- 
  .backdrop {
   position: relative;
   width: 100%;
   height: auto;
   overflow: hidden;
  }
- 
  
  .selectedBackdrop {
   width: 100%;
@@ -117,13 +105,11 @@ code {
   overflow: hidden;
  }
  
- 
  .movie-poster{
   width:100%;
   height: 60vh;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
  }
- 
  
  .overlay-content {
   position: absolute;
@@ -150,9 +136,9 @@ code {
   display: none; 
 }
 
-  .res-overlay-small {
-    display: none;
-  }
+.res-overlay-small {
+  display: none;
+}
  
 
 @media screen and (max-width: 1450px) {
@@ -268,7 +254,7 @@ code {
     width: 100%; 
     max-width: 500px; 
     /* margin: 0 auto; */
-    margin: 8% auto;
+    /* margin: 8% auto;
   }
 
   .movie-poster-mid {
@@ -338,4 +324,4 @@ code {
     margin-top: 15%;
   }
   
-}
+} */ 
