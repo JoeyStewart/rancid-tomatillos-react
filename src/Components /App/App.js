@@ -24,7 +24,7 @@ import Selection from '../Selection/Selection.js';
         setChosenMovie(data.movie);
         navigate(`/${data.movie.id}`);
       })
-      // document.body.style.overflow = 'auto';
+      // document.body.style.overflow = 'hidden';
       document.documentElement.scrollTop = 0;
     }
     
