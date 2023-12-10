@@ -13,7 +13,7 @@ The project also provides an extension option for building a robust testing suit
 
 ## Application link:
 
-[Fit Lit GitHub Repository](https://github.com/JoeyStewart/rancid-tomatillos-react)
+[Rancid Tomatillos GitHub Repository](https://github.com/JoeyStewart/rancid-tomatillos-react)
 
 ## Installation Instructions:
 1. Click the green < code > button.
