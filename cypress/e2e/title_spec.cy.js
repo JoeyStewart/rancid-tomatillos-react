@@ -17,6 +17,11 @@ describe('User opens app and sees title', () => {
     .get(".tagline").contains("h4", "The world needed a hero. It got Black Adam.")
     .get(".selectedTitle").contains("h2", "Black Adam")
   })
-
+  it("cards should get larger when mouse is hovering over them", () => {
+    cy.get(".card.fade-in").each(($card) => {
+    cy.wrap($card).should("have.css", "opacity", "1"); 
+    cy.wrap($card).trigger("mouseover", {force: true});
+  })
+  })
 })
 

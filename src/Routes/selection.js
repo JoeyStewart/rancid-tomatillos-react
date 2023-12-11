@@ -7,7 +7,13 @@ export async function loader({ params }) {
     `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${params.movieId}`
   ).then((response) => {
     if (!response.ok) {
-      throw new Error(`Error code: ${response.status}`);
+      if (response.status >= 400 && response.status < 500) {
+        throw new Error("Error: There was a problem with the request");
+      } else if (response.status >= 500) {
+        throw new Error("Error: Please try again later");
+      } else {
+        throw new Error("Error: Unable to fulfill request");
+      }
     }
     return response.json();
   });
